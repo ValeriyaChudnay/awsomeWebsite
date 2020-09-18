@@ -1,0 +1,34 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<header class="header">
+    <div class="shortener">
+        <a class="logo-link" href="index.jsp"><img class="logo" src="img/logo.png"></a>
+        <ul class="menu">
+            <li class="menu-item"><a href="index.jsp">главная</a></li>
+            <li class="menu-item"><a href="catalog.jsp?sortType=PRICE_UP&category=Tshirt">футболки</a></li>
+            <li class="menu-item"><a href="catalog.jsp?sortType=PRICE_UP&category=Figure">фигурки</a></li>
+            <li class="menu-item"><a href="catalog.jsp?sortType=PRICE_UP&category=Toy">игрушки</a></li>
+            <li class="menu-item"><a href="catalog.jsp?sortType=PRICE_UP&category=Accessory">аксессуары</a></li>
+        </ul>
+        <div class="icons">
+            <div class="phone-box">
+                <img class="phone-img" src="img/phone.png">
+                <div class="numbers-box">
+                    <a class="phone-number" href="tel:+380xxxxxxxxx">+380xxxxxxxxx</a>
+                    <a class="phone-number" href="tel:+380xxxxxxxxx">+380xxxxxxxxx</a>
+                    <a class="phone-number" href="tel:+380xxxxxxxxx">+380xxxxxxxxx</a>
+                </div>
+            </div>
+<c:choose>
+    <c:when test="${empty currentUser}">
+        <a class="login-button" href="login.jsp">войти</a>
+    </c:when>
+    <c:otherwise>
+        <a class="login-button" href="/order"><img class="login-button-image" src="img/user.png"></a>
+    </c:otherwise>
+</c:choose>
+            <a href="http://localhost:8080/cart"><img class="icon-img" src="img/cart.png"></a>
+        </div>
+    </div>
+</header>
+
